@@ -1,0 +1,1 @@
+- [Figma 파일·MCP 접속](reference_figma_file.md) — fileKey, Tokens 2168:193·Components 2168:966, Figma 값 그대로 원칙, px 단위, 로컬 3845 MCP

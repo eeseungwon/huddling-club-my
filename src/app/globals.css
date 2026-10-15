@@ -1,19 +1,195 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
 @import "tailwindcss";
 @source not "../../.claude";
+
+/*
+  디자인 토큰 (Figma "Tokens" 섹션, node 2168:193 / HUDDLING CLUB DESIGN SYSTEM 2026.10.05)
+
+  1) :root 의 Primitive 팔레트 = 실제 색상 값. 화면 코드에서 직접 쓰지 않는다.
+  2) @theme 의 Semantic 토큰 = 역할 이름. 화면 코드에서는 이것만 쓴다.
+     예) bg-action-primary, text-text-secondary, border-border-default
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primitive palette */
+  --blue-50: #dceafe;
+  --blue-300: #74aafb;
+  --blue-500: #297eff;
+  --blue-800: #1f3dbc;
+  --blue-900: #00378a;
+  --indigo-500: #536dfe;
+  --neutral-0: #ffffff;
+  --neutral-50: #f9fafb;
+  --neutral-100: #f3f4f6;
+  --neutral-150: #e7e7e8;
+  --neutral-200: #e5e7eb;
+  --neutral-500: #a0a2a3;
+  --neutral-600: #66707a;
+  --neutral-700: #6b7280;
+  --neutral-800: #5e5e5e;
+  --neutral-900: #1f2937;
+  --neutral-950: #131313;
+  --neutral-1000: #000000;
+  --red-600: #d90000;
+  --white-20: #ffffff33;
+  --blue-800-a70: #1f3dbcb2; /* Figma color/action/hover-overlay 값 그대로 */
+  --cover-gradient-3: #050510; /* Figma color/cover-gradient/preserved-3 */
+  --cover-gradient-4: #656f79; /* Figma color/cover-gradient/preserved-4 */
+
+  /* 기존 기본 토큰 (bg-background, text-foreground 호환용) */
+  --background: var(--neutral-0);
+  --foreground: var(--neutral-950);
 }
 
 @theme inline {
+  /* ---------- Color (semantic) ---------- */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+
+  --color-action-primary: var(--indigo-500);
+  --color-action-secondary: var(--blue-500);
+  --color-action-on-primary: var(--neutral-0);
+  --color-action-hover-overlay: var(--blue-800-a70);
+
+  --color-background-default: var(--neutral-0);
+  --color-background-subtle: var(--neutral-50);
+
+  --color-surface-default: var(--neutral-0);
+  --color-surface-subtle: var(--neutral-100);
+  --color-surface-inverse: var(--neutral-900);
+
+  --color-border-default: var(--neutral-200);
+  --color-border-subtle: var(--neutral-150);
+  --color-border-strong: var(--neutral-600);
+  --color-border-accent: var(--blue-800);
+  --color-border-on-dark: var(--white-20);
+
+  --color-text-primary: var(--neutral-950);
+  --color-text-secondary: var(--neutral-700);
+  --color-text-tertiary: var(--neutral-600);
+  --color-text-strong: var(--neutral-1000);
+  --color-text-disabled: var(--neutral-500);
+  --color-text-inverse: var(--neutral-0);
+
+  --color-info-default: var(--blue-500);
+  --color-info-soft: var(--blue-300);
+  --color-info-strong: var(--blue-900);
+  --color-info-subtle: var(--blue-50);
+
+  --color-feedback-error: var(--red-600);
+
+  /* 초대장 커버 배경 그라데이션 (위 → 아래) */
+  --color-cover-gradient-preserved-3: var(--cover-gradient-3);
+  --color-cover-gradient-preserved-4: var(--cover-gradient-4);
+
+  /* ---------- Font ---------- */
+  /* Pretendard는 맨 위 @import(jsDelivr CDN)로 불러온다 */
+  --font-sans:
+    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  /* ---------- Spacing (semantic) ---------- */
+  /* 기준 단위를 1px로 바꿔 Figma 숫자를 px 그대로 쓴다.
+     예) p-20 = 20px, gap-12 = 12px, mt-5 = 5px */
+  --spacing: 1px;
+
+  --spacing-control-x: 12px;
+  --spacing-control-y: 8px;
+  --spacing-inline-xs: 2px;
+  --spacing-inline-sm: 4px;
+  --spacing-inline-md: 8px;
+  --spacing-inline-compact: 6px;
+  --spacing-control-compact: 10px;
+  --spacing-stack-sm: 12px;
+  --spacing-stack-md: 16px;
+  --spacing-stack-lg: 24px;
+  --spacing-section: 32px;
+  --spacing-section-lg: 40px;
+  --spacing-cover-inset: 80px;
+  --spacing-page-horizontal: 20px;
+
+  /* ---------- Radius (semantic) ---------- */
+  --radius-button: 6px;
+  --radius-control: 8px;
+  --radius-media: 12px;
+  --radius-card: 20px;
+  --radius-pill: 999px;
+  --radius-scaled-media-16-8: 16.8px; /* Figma radius/scaled-media-16-8 (Image type=flag) */
+
+  /* ---------- Letter spacing (자간) ---------- */
+  /* Figma 컴포넌트에 직접 쓰인 음수 자간 값. 예) tracking-minus-0-16 */
+  --tracking-minus-0-12: -0.12px;
+  --tracking-minus-0-16: -0.16px; /* Figma typography/preserved/letter-spacing/pixels/-0-16 */
+  --tracking-minus-0-28: -0.28px;
+  --tracking-minus-0-42: -0.42px;
+  --tracking-minus-0-5: -0.5px;
+  --tracking-minus-1: -1px; /* Figma typography/preserved/letter-spacing/pixels/-1 */
+
+  /* ---------- Typography (semantic text styles) ---------- */
+  /* 사용법: text-display-lg 하나로 크기·행간·자간·굵기가 함께 적용된다.
+     Figma 행간은 비율(140%/150%)로 정의되어 있어 글자 크기 × 비율로 px를 계산했다.
+     Figma 자간은 모두 0px이다. */
+  --text-display-lg: 26px;
+  --text-display-lg--line-height: 36.4px;
+  --text-display-lg--letter-spacing: 0px;
+  --text-display-lg--font-weight: 800;
+
+  --text-title-lg: 25px;
+  --text-title-lg--line-height: 35px;
+  --text-title-lg--letter-spacing: 0px;
+  --text-title-lg--font-weight: 600;
+
+  --text-heading-lg: 20px;
+  --text-heading-lg--line-height: 28px;
+  --text-heading-lg--letter-spacing: 0px;
+  --text-heading-lg--font-weight: 700;
+
+  --text-heading-md: 18px;
+  --text-heading-md--line-height: 25.2px;
+  --text-heading-md--letter-spacing: 0px;
+  --text-heading-md--font-weight: 600;
+
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-lg--letter-spacing: 0px;
+  --text-body-lg--font-weight: 400;
+
+  --text-label-lg: 16px;
+  --text-label-lg--line-height: 22.4px;
+  --text-label-lg--letter-spacing: 0px;
+  --text-label-lg--font-weight: 600;
+
+  --text-body-compact: 15px;
+  --text-body-compact--line-height: 22.5px;
+  --text-body-compact--letter-spacing: 0px;
+  --text-body-compact--font-weight: 400;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height: 21px;
+  --text-body-md--letter-spacing: 0px;
+  --text-body-md--font-weight: 400;
+
+  --text-label-md: 14px;
+  --text-label-md--line-height: 19.6px;
+  --text-label-md--letter-spacing: 0px;
+  --text-label-md--font-weight: 500;
+
+  --text-caption-md: 12px;
+  --text-caption-md--line-height: 18px;
+  --text-caption-md--letter-spacing: 0px;
+  --text-caption-md--font-weight: 400;
+
+  /* 입력창·라벨 글자 (Figma: body/lg 16px · 행간 normal(=19px) · 자간 -0.16px) */
+  --text-input-lg: 16px;
+  --text-input-lg--line-height: 19px;
+  --text-input-lg--letter-spacing: -0.16px;
+  --text-input-lg--font-weight: 400;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background-default);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
 }
