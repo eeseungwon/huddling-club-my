@@ -17,3 +17,9 @@ metadata:
   - Figma "Image" 컴포넌트 PNG는 public/images/character.png, flag.png. 아이콘 SVG는 파일 대신 currentColor 인라인 SVG 컴포넌트로 만듦.
   - 섹션 전체 get_design_context는 시간 초과 → 컴포넌트 노드 하나씩 요청해야 함.
 - 사용자 원칙: "Figma처럼 그대로" (Button의 md 회색·반투명 hover 등 이상해 보여도 Figma 값 유지).
+- /create 프레임: `2168:886`(입력·미리보기), `2168:910`(발행 완료) — docs/figma-frames.md에 기록함 (2026-10-15).
+- 주의(2026-10-15 발견): 실행 중인 dev 서버(Turbopack + @tailwindcss/turbopack)가 globals.css의 @theme에 새 토큰을 추가해도 반영 안 될 때가 있었다(touch로도 안 됨). globals.css 내용을 실제로 한 글자 바꾸자 반영됨. 빌드 결과물은 정상. 헤드리스 Chrome은 창 폭이 최소 약 500px라 375px 확인은 max-w 가운데 정렬로 본다.
+- /i/[id] 프레임: `2168:923` (커버 + 본문 + 일시·장소 카드 + RSVP 영역). mock id `3f8b2c1e-7a4d-4e9b-9c2f-1d6e5a8b0c47` (src/lib/mock.ts).
+- 화면 확인 방법: 헤드리스 Chrome을 --remote-debugging-port로 띄우고 node 내장 WebSocket으로 CDP 조종(Emulation 375px, 입력·클릭, 캡처)하면 됨. dev 서버에는 /_next/mcp (get_errors 등) 엔드포인트가 있음.
+- 응답 현황 프레임: `2168:871`(목록 있음), `2168:952`(0건: 카드 0명 + EmptyState). 확인용 주소 별칭: /i/demo(=mock UUID), /i/empty(응답 0건 mock). 참석 인원 합계 = 참석자 본인 1 + 동반 (사용자 확답 전, summarizeResponses에 모음).
+- 사용자 규칙(2026-10-15): "새 컴포넌트 금지, 필요하면 보고" — 라우트 폴더용 작은 클라이언트 파일도 새 컴포넌트로 보고 묻고 만들기.

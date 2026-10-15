@@ -49,3 +49,15 @@ export const mockResponses: Response[] = [
     companions: 0,
   },
 ];
+
+// 응답이 아직 하나도 없는 초대장 (응답 현황 0건 화면 확인용, /i/empty)
+export const mockEmptyInvitation: Invitation = {
+  id: "empty",
+  title: "허들링 클럽 송년회",
+  dateTime: "2026-12-19T18:30:00+09:00",
+  location: "서울특별시 중구 세종대로 110",
+  body: "한 해 동안 고마웠어요.\n따뜻한 저녁 함께 먹으며 이야기 나눠요.",
+};
+
+// 초대장 전체 목록 (mockInvitation은 그대로 두고, 여기에 모아서 찾는다)
+export const mockInvitations: Invitation[] = [mockInvitation, mockEmptyInvitation];

@@ -5,8 +5,9 @@ URL은 Figma에서 프레임을 선택한 뒤 `우클릭 → Copy link to select
 
 | 경로 | 화면 | Figma 프레임 URL |
 | --- | --- | --- |
-| `/create` | 만들기 (입력·미리보기·발행) | |
-| `/create` (발행 완료) | 링크 공유 | |
-| `/i/[id]` | 초대장 보기·응답 폼 | |
+| `/create` | 만들기 (입력·미리보기·발행) — Figma `/create`, node `2168:886` | https://www.figma.com/design/bhd2K5JONXagoYy4lIPhFp/?node-id=2168-886 |
+| `/create` (발행 완료) | 링크 공유 — Figma `/create_published`, node `2168:910` | https://www.figma.com/design/bhd2K5JONXagoYy4lIPhFp/?node-id=2168-910 |
+| `/i/[id]` | 초대장 보기·응답 폼 — Figma `/i/[id]`, node `2168:923` | https://www.figma.com/design/bhd2K5JONXagoYy4lIPhFp/?node-id=2168-923 |
 | `/i/[id]` (제출 완료) | 응답 완료 | |
-| `/i/[id]/responses` | 응답 현황 | |
+| `/i/[id]/responses` | 응답 현황 — Figma `/i/[id]/responses`, node `2168:871` | https://www.figma.com/design/bhd2K5JONXagoYy4lIPhFp/?node-id=2168-871 |
+| `/i/[id]/responses` (응답 0건) | 응답 현황 빈 상태 — Figma `/i/[id]/responses_empty`, node `2168:952` | https://www.figma.com/design/bhd2K5JONXagoYy4lIPhFp/?node-id=2168-952 |

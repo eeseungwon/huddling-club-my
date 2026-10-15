@@ -110,6 +110,10 @@
   --spacing-cover-inset: 80px;
   --spacing-page-horizontal: 20px;
 
+  /* ---------- Layout ---------- */
+  /* 화면 최대 너비 (Figma 모바일 프레임 폭 375px). 사용 예: max-w-mobile */
+  --container-mobile: 375px;
+
   /* ---------- Radius (semantic) ---------- */
   --radius-button: 6px;
   --radius-control: 8px;
