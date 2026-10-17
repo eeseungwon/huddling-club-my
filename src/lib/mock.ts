@@ -20,10 +20,10 @@ export type Response = {
 
 export const mockInvitation: Invitation = {
   id: "3f8b2c1e-7a4d-4e9b-9c2f-1d6e5a8b0c47",
-  title: "허들링 클럽 2번째 오프라인 밋업",
-  dateTime: "2026-11-14T09:00:00+09:00",
-  location: "세종특별자치시 한누리대로 2130",
-  body: "추운 겨울, 함께 모여 온기를 나눠요.\n편하게 오셔서 이야기 나누고 맛있는 것도 먹어요.",
+  title: "올해의 마지막 반짝임,\n우리들의 연말 홈파티",
+  dateTime: "2026-12-27T18:00:00+09:00",
+  location: "서울 신사동",
+  body: "한 해 동안 고마웠던 우리 셋에게.\n잔을 부딪치며 올해를 따뜻하게 마무리하고\n설레는 새해를 함께 맞이해요.\n리본 묶듯 소중한 저녁, 꼭 와줘요.",
 };
 
 export const mockResponses: Response[] = [

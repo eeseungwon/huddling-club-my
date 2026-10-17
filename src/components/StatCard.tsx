@@ -9,12 +9,13 @@ type StatCardProps = {
 export default function StatCard({ label, value, highlight = false, className = "" }: StatCardProps) {
   return (
     <div
-      className={`flex w-107 flex-col items-center gap-inline-sm rounded-card px-control-x py-stack-md ${
+      className={`flex w-107 flex-col items-center justify-between gap-inline-sm rounded-card px-control-x py-stack-md ${
         highlight ? "bg-info-subtle" : "bg-surface-subtle"
       } ${className}`}
     >
-      <span className="text-caption-md text-text-secondary">{label}</span>
-      <span className={`text-title-lg ${highlight ? "text-info-strong" : "text-text-strong"}`}>{value}</span>
+      {/* 라벨이 카드보다 길면 단어 단위로 줄바꿈한다 (글자 중간에서 끊지 않음) */}
+      <span className="text-center break-keep text-caption-md text-text-secondary">{label}</span>
+      <span className={`whitespace-nowrap text-title-lg ${highlight ? "text-info-strong" : "text-text-strong"}`}>{value}</span>
     </div>
   );
 }

@@ -11,9 +11,10 @@ type ResponseRowProps = {
 export default function ResponseRow({ name, meta, status }: ResponseRowProps) {
   return (
     <div className="flex h-78 w-full items-center gap-stack-sm rounded-card border border-border-subtle bg-surface-default p-stack-md">
-      <div className="flex min-w-1 flex-1 flex-col items-start gap-inline-sm overflow-hidden whitespace-nowrap">
-        <p className="text-label-lg text-text-primary">{name}</p>
-        {meta && <p className="text-caption-md text-text-tertiary">{meta}</p>}
+      {/* 이름·부가 정보가 길면 끝을 "…"로 줄인다 */}
+      <div className="flex min-w-0 flex-1 flex-col items-start gap-inline-sm">
+        <p className="w-full truncate text-label-lg text-text-primary">{name}</p>
+        {meta && <p className="w-full truncate text-caption-md text-text-tertiary">{meta}</p>}
       </div>
       <AttendanceBadge status={status} />
     </div>

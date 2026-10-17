@@ -43,7 +43,7 @@ export default async function ResponsesPage({ params }: PageProps<"/i/[id]/respo
         />
 
         {/* 숫자 카드 3개가 한 줄을 똑같이 나눠 쓴다 */}
-        <div className="flex w-full gap-inline-md whitespace-nowrap">
+        <div className="flex w-full gap-inline-md">
           <StatCard className="min-w-1 flex-1" label="참석" value={`${summary.yes}명`} />
           <StatCard className="min-w-1 flex-1" label="불참" value={`${summary.no}명`} />
           <StatCard className="min-w-1 flex-1" label="참석 인원 합계" value={`${summary.totalAttendees}명`} highlight />
